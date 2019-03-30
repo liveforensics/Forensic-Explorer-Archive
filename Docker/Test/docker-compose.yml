@@ -1,1 +1,27 @@
 # compose file for the test dockerfile
+version: '2.1'
+
+services:  
+
+  ForensicExplorerRabbit:
+    image: liveforensics/forensicexplorerrabbit:1.0.0
+    container_name: ForensicExplorerRabbit
+    networks:
+      - default
+      
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+        
+    mem_limit: 2G
+   
+    
+
+networks:
+  default:
+    external:
+      name: crapo
+      
+
+
